@@ -15,8 +15,14 @@ namespace NumbersGame
             {
                 Console.WriteLine("Välkommen! Jag tänker på ett nummer. Kan du gissa vilket? Du får fem försök.");
 
+
+                Console.WriteLine("Mellan vilka tal vill du gissa?");
+                int number1 = int.Parse(Console.ReadLine());
+                Console.Write("Till");
+                int number2 = int.Parse(Console.ReadLine());
                 Random random = new Random();
-                int number = random.Next(1, 10);
+                int number = random.Next(number1, number2);
+                //Console.WriteLine(number);
 
                 int försök = 0;
                 bool guessRight = false;
@@ -26,12 +32,12 @@ namespace NumbersGame
                 while (försök < 5)
                 //denna while loop med programmet ska köras så länge försök är under 5. För varje gång den körs plussas det på en på variablen försök.
                 {
-                    Console.WriteLine("Gissa ett tal mellan 1-20");
+                    Console.WriteLine($"Gissa ett tal mellan {number1} till {number2}");
                     if (int.TryParse(Console.ReadLine(), out int guess))
                     {
                         försök++;
 
-                        if (checkGuess(guess, number))
+                        if (checkGuess(guess,number))
                         {
                             guessRight = true;
                             break;
