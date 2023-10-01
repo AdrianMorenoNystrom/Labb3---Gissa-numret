@@ -18,7 +18,7 @@ namespace NumbersGame
 
                 Console.WriteLine("Mellan vilka tal vill du gissa?");
                 int number1 = int.Parse(Console.ReadLine());
-                Console.Write("Till");
+                Console.WriteLine("Till");
                 int number2 = int.Parse(Console.ReadLine());
                 Random random = new Random();
                 int number = random.Next(number1, number2);
